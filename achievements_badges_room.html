@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Achievements</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md text-text-main min-h-screen overflow-x-hidden flex flex-col selection:bg-primary-container selection:text-white">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 sticky z-50 shadow-sm shadow-[0_4px_0_0_rgba(174,47,52,0.1)] dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-7xl mx-auto">
+<!-- Logo -->
+<a class="font-headline-lg text-headline-lg font-black text-primary dark:text-inverse-primary tracking-tight hover:scale-105 transition-transform duration-200 active:translate-y-[2px]" href="#">
+                MathQuest
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant transition-all hover:text-primary hover:scale-105 active:translate-y-[2px]" href="#">Fun Games</a>
+<a class="font-label-bold text-label-bold text-primary dark:text-inverse-primary border-b-4 border-primary dark:border-primary-fixed-dim pb-1 hover:scale-105 active:translate-y-[2px]" href="#">Earn Badges</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant transition-all hover:text-primary hover:scale-105 active:translate-y-[2px]" href="#">Track Progress</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant transition-all hover:text-primary hover:scale-105 active:translate-y-[2px]" href="#">About</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-4">
+<button class="font-label-bold text-label-bold text-primary hover:text-surface-tint transition-colors hover:scale-105 active:translate-y-[2px]">Login</button>
+<button class="font-label-bold text-label-bold bg-primary text-white px-6 py-3 rounded-full shadow-[0_4px_0_0_rgba(140,21,32,1)] hover:scale-105 active:translate-y-[4px] active:shadow-none transition-all">Sign Up</button>
+</div>
+<!-- Mobile Menu Toggle (Visual Only) -->
+<button class="md:hidden text-primary p-2 rounded-full bg-surface-container-high hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center py-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto relative">
+<!-- Page Header -->
+<div class="text-center mb-12 relative z-10 w-full max-w-3xl">
+<h1 class="font-headline-xl text-headline-xl text-on-tertiary-fixed mb-4 drop-shadow-md">Trophy Room</h1>
+<p class="font-body-lg text-body-lg text-tertiary">Look at all the amazing things you've learned! Tap a shiny badge to see your reward.</p>
+</div>
+<!-- Trophy Room Grid & Shelves Layout -->
+<div class="w-full max-w-5xl flex flex-col gap-16 relative z-10">
+<!-- Shelf 1: Addition Masters -->
+<div class="relative w-full">
+<h2 class="font-headline-lg text-headline-lg text-tertiary mb-6 pl-4 border-l-8 border-bubblegum">Addition Masters</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-4 relative z-10 px-8">
+<!-- Earned Badge 1 -->
+<div class="flex flex-col items-center gap-4 group" onclick="openModal('Number Ninja', 'Completed 50 addition puzzles flawlessly!', 'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80')">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface shadow-lg flex items-center justify-center badge-earned animate-float">
+<img alt="Gold Star Badge" class="w-20 h-20 md:w-24 md:h-24 object-contain drop-shadow-md" data-alt="A brightly colored 3D cartoon style gold star badge with a smiling face, set against a clean bright background. The badge is highly polished, vibrant, and looks like a physical toy, fitting a children's math game aesthetic. Lighting is soft and cheerful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7uDJpxV6qKVmkVOYiqqpVkwcS4Olh8iKWmpdtyHOM4fGYjDFkqgC45cBv4hTp9l4UD1xssrJ5CF6o-Zyjnc-lKuS_MZfl2dE-jjCgSygBvQRm_QHtOCd4G1WT_218KzYMRrDJn6fOfzMEdXeqIyVKfov9yPvt8SxIZPYZp1-klzb1n5N23ATwpc-qX0aE_6Bh-BEjcWqbeFL6QC0MjYJukvScw5d_yngPPUQM4cW6lxa-AImmLFhKTNemQ-9OUQbZvl9Ju8Ekyg"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-tertiary-container text-center bg-white/50 px-4 py-1 rounded-full">Number Ninja</span>
+</div>
+<!-- Earned Badge 2 -->
+<div class="flex flex-col items-center gap-4 group" onclick="openModal('Speed Demon', 'Solved 10 equations in under a minute!', 'https://images.unsplash.com/photo-1614036417651-1d478915e714?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80')" style="animation-delay: 0.5s">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface shadow-lg flex items-center justify-center badge-earned animate-float" style="animation-delay: 0.5s">
+<img alt="Lightning Bolt Badge" class="w-20 h-20 md:w-24 md:h-24 object-contain drop-shadow-md" data-alt="A brightly colored 3D cartoon style lightning bolt badge, vibrant yellow and glossy. The badge is highly polished and looks like a tangible squishy toy. The setting is clean and bright, maintaining a joyful, high-energy aesthetic suitable for a kids learning app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQWqdfhUGhkuZ7p-_QsB6k2akhytAz6v9gCNNNEMtEHRlVxjg3PhG5Kbz5vPqKj97uY4hnkp1EnZYmeJwmbiVmQjcAOH8Z_-4iGnvu7hwkpdne5DQ0FpnpvZhrAt_-n_UsPXxevHbisl6Bqj6z0vsASRuExkcpiaWlZDz9IEM4BZIRNRLe8sniu6BvC050uBWb8uzGFTE3qcEYrWa3pyE28GwHJORkX79-Z7ank_jya1JhldeO0_93Z6Bk7xJQ0nIcURTn5_Np3A"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-tertiary-container text-center bg-white/50 px-4 py-1 rounded-full">Speed Demon</span>
+</div>
+<!-- Unearned Badge 1 -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface-container-highest shadow-inner flex items-center justify-center badge-unearned">
+<span class="material-symbols-outlined text-6xl text-outline" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<span class="font-label-bold text-label-bold text-outline text-center">Addition King</span>
+</div>
+<!-- Unearned Badge 2 -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface-container-highest shadow-inner flex items-center justify-center badge-unearned">
+<span class="material-symbols-outlined text-6xl text-outline" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<span class="font-label-bold text-label-bold text-outline text-center">Perfect 100</span>
+</div>
+</div>
+<!-- The Shelf Physical Structure -->
+<div class="shelf w-full h-8 rounded-xl absolute bottom-0 left-0 right-0 z-0 transform translate-y-2"></div>
+</div>
+<!-- Shelf 2: Shape Explorers -->
+<div class="relative w-full mt-8">
+<h2 class="font-headline-lg text-headline-lg text-tertiary mb-6 pl-4 border-l-8 border-sky-blue">Shape Explorers</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-4 relative z-10 px-8">
+<!-- Earned Badge 3 -->
+<div class="flex flex-col items-center gap-4 group" onclick="openModal('Triangle Tamer', 'Identified 20 tricky triangles.', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80')" style="animation-delay: 0.2s">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface shadow-lg flex items-center justify-center badge-earned animate-float" style="animation-delay: 0.2s">
+<img alt="Geometric Shape Badge" class="w-20 h-20 md:w-24 md:h-24 object-cover rounded-full drop-shadow-md" data-alt="A stylized 3D rendered badge featuring a vibrant, squishy-looking geometric triangle in shades of bright blue and green. The badge has a thick, tactile border. The lighting is soft and cheerful, fitting perfectly into a highly polished, child-friendly digital trophy room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa07QPsar5p-aas7yWK5xVI84XNc-6wXC0bJvYlbgoxPAAhW8y-Vn7Z8aBMO51qUl71NI-_hBCV0zb3Rzm_n7kupoAjlFZ6PPJOOQ-e1n6AJDSUYuRKQQPvAYqZGXLXavS3Z5s4zktZqviIE3TpDeWVw6NluYrz_EN7c33Mme8i8skVeR1gSCP-Cz2r7N2pfRZQ_WOWu_HOSFmdsSnjXvDnQH2OUa6RXf3SCCnzxesxG4lwRDbaae2YQKTtztsnL-4RVDXPrtszw"/>
+</div>
+<span class="font-label-bold text-label-bold text-on-tertiary-container text-center bg-white/50 px-4 py-1 rounded-full">Triangle Tamer</span>
+</div>
+<!-- Unearned Badge 3 -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface-container-highest shadow-inner flex items-center justify-center badge-unearned">
+<span class="material-symbols-outlined text-6xl text-outline" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+</div>
+<span class="font-label-bold text-label-bold text-outline text-center">Hexagon Hero</span>
+</div>
+<!-- Unearned Badge 4 -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-surface-container-highest shadow-inner flex items-center justify-center badge-unearned">
+<span class="material-symbols-outlined text-6xl text-outline" style="font-variation-settings: 'FILL' 1;">pentagon</span>
+</div>
+<span class="font-label-bold text-label-bold text-outline text-center">Pattern Pro</span>
+</div>
+<!-- Empty Space for visual balance -->
+<div class="hidden md:block"></div>
+</div>
+<!-- The Shelf Physical Structure -->
+<div class="shelf w-full h-8 rounded-xl absolute bottom-0 left-0 right-0 z-0 transform translate-y-2"></div>
+</div>
+</div>
+<!-- Mascot Placement -->
+<div class="fixed bottom-0 right-0 p-8 pointer-events-none z-40 hidden lg:block animate-bounce-slight">
+<img alt="Mascot cheering" class="w-64 h-auto drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/ADBb0uiH3llG0VvpXPWUz5NllHCovB6fLoIYILx0c2MlIhCz9wgpn02zu-TQlwspDC-NeoZu4q1dmtcbC5W59k35kBJiSuesgVkkmQRmFuTilpCDfUnZnpfdb7qqEMuG9sYQNovK-FJcUmkDXnq9W0AvEIWL6W9A5QJX46nP5xw9J9Hk-ewjkKqDMPX37fV44GeOeYp2dzk0yHIJX6IrxN14tkRvkpsy4RAy275UWK_-lNn4YR2-Ltg3sXbHBw"/>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest full-width rounded-t-xl mt-auto relative z-20">
+<div class="flex flex-col items-center gap-base py-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black text-secondary mb-4">
+                MathQuest
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 mb-6">
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90" href="#">Parents Guide</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90" href="#">Terms of Play</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90" href="#">Contact Us</a>
+</nav>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary-fixed text-center opacity-80">
+                © 2024 MathQuest Adventure. Built for little explorers.
+            </div>
+</div>
+</footer>
+<!-- Badge Details Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center px-4" id="badgeModal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+<!-- Modal Content -->
+<div class="glass-panel w-full max-w-md rounded-[32px] p-8 flex flex-col items-center relative z-10 transform scale-95 opacity-0 transition-all duration-300 ease-out" id="modalCard">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 text-outline hover:text-primary transition-colors bg-surface-container rounded-full p-2 hover:scale-110 active:scale-90" onclick="closeModal()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+</button>
+<!-- Badge Image Placeholder -->
+<div class="w-48 h-48 rounded-full bg-surface shadow-xl flex items-center justify-center mb-6 animate-pulse-slow p-4" id="modalImageContainer">
+<img alt="Badge" class="w-full h-full object-contain drop-shadow-lg" id="modalBadgeImg" src=""/>
+</div>
+<!-- Text Content -->
+<h3 class="font-headline-lg text-headline-lg text-text-main text-center mb-2" id="modalBadgeName">Badge Name</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-center mb-8" id="modalBadgeDesc">How you earned this shiny badge!</p>
+<!-- Awesome Button -->
+<button class="w-full font-headline-lg-mobile text-headline-lg-mobile bg-bubblegum text-white py-4 rounded-full shadow-[0_6px_0_0_#d85f80] hover:scale-[1.02] active:translate-y-[6px] active:shadow-none transition-all" onclick="closeModal()">
+                Awesome!
+            </button>
+</div>
+<!-- Confetti Container -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden" id="confettiContainer"></div>
+</div>
+<script>
+        const modal = document.getElementById('badgeModal');
+        const modalCard = document.getElementById('modalCard');
+        const modalBadgeName = document.getElementById('modalBadgeName');
+        const modalBadgeDesc = document.getElementById('modalBadgeDesc');
+        const modalBadgeImg = document.getElementById('modalBadgeImg');
+        const confettiContainer = document.getElementById('confettiContainer');
+
+        function openModal(name, description, imgSrc) {
+            // Set Content
+            modalBadgeName.textContent = name;
+            modalBadgeDesc.textContent = description;
+            modalBadgeImg.src = imgSrc;
+
+            // Show Modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger entry animation
+            setTimeout(() => {
+                modalCard.classList.remove('scale-95', 'opacity-0');
+                modalCard.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            fireConfetti();
+        }
+
+        function closeModal() {
+            // Trigger exit animation
+            modalCard.classList.remove('scale-100', 'opacity-100');
+            modalCard.classList.add('scale-95', 'opacity-0');
+            
+            // Hide after animation completes
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                confettiContainer.innerHTML = ''; // Clear confetti
+            }, 300);
+        }
+
+        function fireConfetti() {
+            confettiContainer.innerHTML = '';
+            const colors = ['#FF85A2', '#74BCFF', '#6BCB77', '#fbe36a']; // bubblegum, sky-blue, leaf-green, tertiary-fixed
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Randomize properties
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 1 + 's';
+                
+                confettiContainer.appendChild(confetti);
+            }
+        }
+    </script>
+</body></html>

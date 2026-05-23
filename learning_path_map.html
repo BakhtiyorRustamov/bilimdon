@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learning Path - MathQuest Adventure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim shadow-[0_4px_0_0_rgba(174,47,52,0.1)] dark:shadow-none shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-7xl mx-auto">
+<!-- Brand -->
+<a class="font-headline-lg text-headline-lg font-black text-primary dark:text-inverse-primary tracking-tight hover:scale-105 transition-transform duration-200 active:translate-y-[2px]" href="#">
+                MathQuest
+            </a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-surface-variant transition-all hover:text-primary font-label-bold text-label-bold hover:scale-105 active:translate-y-[2px]" href="#">Fun Games</a>
+<a class="text-on-surface-variant dark:text-surface-variant transition-all hover:text-primary font-label-bold text-label-bold hover:scale-105 active:translate-y-[2px]" href="#">Earn Badges</a>
+<a class="text-primary dark:text-inverse-primary border-b-4 border-primary dark:border-primary-fixed-dim pb-1 font-label-bold text-label-bold hover:scale-105 active:translate-y-[2px]" href="#">Track Progress</a>
+<a class="text-on-surface-variant dark:text-surface-variant transition-all hover:text-primary font-label-bold text-label-bold hover:scale-105 active:translate-y-[2px]" href="#">About</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex gap-base items-center">
+<button class="font-label-bold text-label-bold px-6 py-3 rounded-full bg-surface-container-high text-primary hover:bg-surface-container-highest transition-colors active:translate-y-[2px] border-b-4 border-surface-container-highest hover:scale-105">Login</button>
+<button class="font-label-bold text-label-bold px-6 py-3 rounded-full bg-primary text-on-primary hover:bg-on-primary-fixed-variant transition-colors active:translate-y-[2px] border-b-4 border-on-primary-fixed-variant hover:scale-105">Sign Up</button>
+</div>
+<!-- Mobile Menu Toggle (Placeholder) -->
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow relative overflow-hidden flex flex-col items-center">
+<!-- Hero Title Area -->
+<div class="relative z-10 text-center py-10 w-full bg-gradient-to-b from-sky-blue/20 to-transparent">
+<h1 class="font-headline-xl text-headline-xl text-primary drop-shadow-sm mb-2">Math Explorer's Path</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Follow the trail to become a math master!</p>
+</div>
+<!-- The Adventure Map Canvas -->
+<div class="relative w-full max-w-5xl mx-auto flex-grow min-h-[800px] flex justify-center items-center p-margin-mobile md:p-margin-desktop my-8">
+<!-- Map Background Image -->
+<div class="absolute inset-0 rounded-[40px] overflow-hidden shadow-sm border-8 border-surface-container-high z-0" data-alt="A lush, colorful cartoon-style forest landscape serving as a background for a 2D learning path map. The scene is bright and cheerful, featuring soft green hills, stylized trees with rounded canopies, and a bright blue sky with fluffy white clouds. The color palette is high-energy, utilizing vibrant greens, soft blues, and warm earth tones, creating a welcoming, safe, and joyful environment perfect for a children's educational game. The lighting is sunny and even, avoiding harsh shadows to maintain a clean, modern aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC52qDGU06YnVR_e-6ue2DmoU1o7KTdLVmapj0nV838PgVbqKkour67He9zp-4dnUHM9htCvoKe2Zwz8M2y6PXolaKZP2av_f33eKZ9BqDe47Z2Ih-6xgNH0TmQTpZUM2gQADGHv21ZzhDFpovb17ccTi548JwZ-FUgRE5gBP002xWeeJVQqQnWCBX1jOyhcTdxJNjRfQQUN1n_STkeGDuom3pIYZyFjqBiIanlvyzwGwbTuVp_CAtrRY6PCm3H_pDWIi9OlULwhQ'); background-size: cover; background-position: center; opacity: 0.15;">
+</div>
+<!-- The Winding Path SVG -->
+<svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" preserveaspectratio="xMidYMid slice" viewbox="0 0 1000 800">
+<path class="path-line" d="M 150,150 C 300,150 400,300 500,400 C 600,500 700,300 850,250 C 900,250 950,400 800,550 C 650,700 400,600 250,700"></path>
+</svg>
+<!-- Mascot Container (Decorative) -->
+<div class="absolute bottom-10 left-10 z-20 w-48 h-48 animate-bounce" style="animation-duration: 3s;">
+<img alt="MathQuest Fox Mascot" class="w-full h-full object-contain drop-shadow-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uiH3llG0VvpXPWUz5NllHCovB6fLoIYILx0c2MlIhCz9wgpn02zu-TQlwspDC-NeoZu4q1dmtcbC5W59k35kBJiSuesgVkkmQRmFuTilpCDfUnZnpfdb7qqEMuG9sYQNovK-FJcUmkDXnq9W0AvEIWL6W9A5QJX46nP5xw9J9Hk-ewjkKqDMPX37fV44GeOeYp2dzk0yHIJX6IrxN14tkRvkpsy4RAy275UWK_-lNn4YR2-Ltg3sXbHBw"/>
+</div>
+<!-- Learning Nodes Layer -->
+<div class="relative w-full h-[800px] z-10">
+<!-- Node 1: Completed -->
+<div class="absolute top-[120px] left-[12%] node-container group cursor-pointer" tabindex="0">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest shadow-sm border-b-[6px] border-leaf-green flex items-center justify-center transform transition-transform duration-300 hover:-translate-y-2 hover:scale-105 z-10 relative">
+<div class="w-20 h-20 rounded-full bg-leaf-green flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-5xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Checkmark Badge -->
+<div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-tertiary-fixed border-2 border-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-lg" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="absolute top-28 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface px-4 py-2 rounded-full shadow-sm border-2 border-surface-container-high pointer-events-none">
+<span class="font-label-bold text-label-bold text-on-surface">Numbers &amp; Counting</span>
+</div>
+</div>
+<!-- Node 2: Current (Addition) -->
+<div class="absolute top-[350px] left-[45%] node-container group cursor-pointer" tabindex="0">
+<div class="w-32 h-32 rounded-full bg-surface-container-lowest shadow-sm border-b-[8px] border-primary-container flex items-center justify-center transform transition-transform duration-300 hover:-translate-y-2 hover:scale-105 z-10 relative pulse-glow wobble-hover">
+<div class="w-28 h-28 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-6xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</div>
+</div>
+<div class="absolute top-36 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary-container px-5 py-2 rounded-full shadow-sm border-2 border-primary pointer-events-none">
+<span class="font-label-bold text-label-bold text-on-primary">Addition</span>
+</div>
+<!-- Tooltip -->
+<div class="tooltip absolute -top-16 left-1/2 -translate-x-1/2 bg-surface text-primary font-label-bold text-label-bold px-4 py-2 rounded-xl shadow-[0_8px_16px_rgba(0,0,0,0.1)] border-2 border-primary-fixed-dim whitespace-nowrap z-30 flex items-center gap-2">
+<span class="material-symbols-outlined text-bubblegum">favorite</span>
+                        Jungle Addition
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-b-2 border-r-2 border-primary-fixed-dim transform rotate-45"></div>
+</div>
+</div>
+<!-- Node 3: Locked (Subtraction) -->
+<div class="absolute top-[200px] left-[80%] node-container group cursor-not-allowed opacity-60 grayscale-[50%]" tabindex="-1">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest shadow-sm border-b-[6px] border-surface-variant flex items-center justify-center z-10 relative">
+<div class="w-20 h-20 rounded-full bg-surface-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-5xl">remove</span>
+</div>
+<!-- Lock Badge -->
+<div class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+<div class="absolute top-28 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface-container-low px-4 py-2 rounded-full shadow-sm border-2 border-surface-variant pointer-events-none">
+<span class="font-label-bold text-label-bold text-on-surface-variant">Subtraction</span>
+</div>
+</div>
+<!-- Node 4: Locked (Geometry) -->
+<div class="absolute top-[650px] left-[20%] node-container group cursor-not-allowed opacity-50 grayscale-[70%]" tabindex="-1">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest shadow-sm border-b-[6px] border-surface-variant flex items-center justify-center z-10 relative">
+<div class="w-20 h-20 rounded-full bg-surface-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-5xl">category</span>
+</div>
+<!-- Lock Badge -->
+<div class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+<div class="absolute top-28 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface-container-low px-4 py-2 rounded-full shadow-sm border-2 border-surface-variant pointer-events-none">
+<span class="font-label-bold text-label-bold text-on-surface-variant">Geometry</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest full-width rounded-t-xl flat no shadows mt-auto">
+<div class="flex flex-col items-center gap-base py-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black text-secondary mb-4">
+                MathQuest
+            </div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-6">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors font-label-bold text-label-bold scale-95 active:scale-90" href="#">Parents Guide</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors font-label-bold text-label-bold scale-95 active:scale-90" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors font-label-bold text-label-bold scale-95 active:scale-90" href="#">Terms of Play</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors font-label-bold text-label-bold scale-95 active:scale-90" href="#">Contact Us</a>
+</nav>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed text-center opacity-80">
+                © 2024 MathQuest Adventure. Built for little explorers.
+            </p>
+</div>
+</footer>
+</body></html>

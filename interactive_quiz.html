@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Fun Quiz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center font-body-md text-on-surface p-margin-mobile md:p-margin-desktop relative overflow-hidden">
+<!-- Top Navigation / Header -->
+<header class="w-full max-w-7xl mx-auto flex justify-between items-center mb-section-gap z-10 relative">
+<div class="flex items-center gap-4">
+<button class="bouncy-button bg-surface-container-high border-surface-variant rounded-full w-12 h-12 flex items-center justify-center text-primary hover:scale-105">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+</button>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight">MathQuest</h1>
+</div>
+<!-- Top Right Stats -->
+<div class="flex gap-4">
+<div class="bg-surface-container-highest px-6 py-3 rounded-full flex items-center gap-2 shadow-sm border-b-4 border-surface-variant hover:scale-105 transition-transform cursor-default">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-on-surface">Score: <span class="text-tertiary-fixed-dim font-black">150</span></span>
+</div>
+<div class="bg-surface-container-highest px-6 py-3 rounded-full flex items-center gap-2 shadow-sm border-b-4 border-surface-variant hover:scale-105 transition-transform cursor-default">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-on-surface">Streak: <span class="text-primary-container font-black">3</span></span>
+</div>
+</div>
+</header>
+<!-- Main Quiz Canvas -->
+<main class="w-full max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center z-10 relative">
+<!-- Progress Bar -->
+<div class="w-full max-w-2xl mb-12">
+<div class="flex justify-between items-end mb-2 px-2">
+<span class="font-label-bold text-primary">Question 3 of 10</span>
+<span class="font-body-md text-on-surface-variant">Level 1</span>
+</div>
+<div class="h-6 w-full bg-surface-container-high rounded-full overflow-hidden border-2 border-surface-variant shadow-inner p-1">
+<div class="h-full bg-sky-blue rounded-full liquid-progress shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)] w-[30%]"></div>
+</div>
+</div>
+<!-- Question Area -->
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-[32px] shadow-[0_8px_32px_rgba(174,47,52,0.1)] w-full relative mb-12 border-4 border-surface-container-high flex flex-col items-center">
+<h2 class="font-headline-xl text-text-main text-center mb-12">What is <span class="text-primary">5</span> + <span class="text-sky-blue">3</span> ?</h2>
+<!-- Answers Grid -->
+<div class="grid grid-cols-2 gap-6 w-full max-w-lg">
+<button class="bouncy-button bg-leaf-green border-[#52A05B] text-surface-container-lowest rounded-2xl h-24 md:h-32 text-4xl font-black shadow-sm hover:scale-[1.02] active:scale-[0.98]">
+                    6
+                </button>
+<button class="bouncy-button bg-sky-blue border-[#5A95CC] text-surface-container-lowest rounded-2xl h-24 md:h-32 text-4xl font-black shadow-sm hover:scale-[1.02] active:scale-[0.98]">
+                    7
+                </button>
+<button class="bouncy-button bg-tertiary-fixed-dim border-[#B8A443] text-surface-container-lowest rounded-2xl h-24 md:h-32 text-4xl font-black shadow-sm hover:scale-[1.02] active:scale-[0.98]">
+                    8
+                </button>
+<button class="bouncy-button bg-bubblegum border-[#CC6A81] text-surface-container-lowest rounded-2xl h-24 md:h-32 text-4xl font-black shadow-sm hover:scale-[1.02] active:scale-[0.98]">
+                    9
+                </button>
+</div>
+<!-- Mascot Container (Absolute positioned overlapping the card) -->
+<div class="absolute -right-20 -bottom-16 w-64 h-64 hidden lg:block float-animation pointer-events-none">
+<img alt="Friendly fox mascot holding a calculator and pointing encouragingly" class="w-full h-full object-contain filter drop-shadow-xl" data-alt="A 3D rendered friendly fox mascot character, wearing a blue graduation cap, holding a bright turquoise calculator. The fox is smiling encouragingly and pointing to the left. Floating around the fox are colorful 3D math symbols and soft geometric shapes like cubes and spheres. The style is highly polished, playful, and skeuomorphic, perfect for a high-quality children's educational app. Lighting is soft, bright, and cheerful." src="https://lh3.googleusercontent.com/aida/ADBb0uiH3llG0VvpXPWUz5NllHCovB6fLoIYILx0c2MlIhCz9wgpn02zu-TQlwspDC-NeoZu4q1dmtcbC5W59k35kBJiSuesgVkkmQRmFuTilpCDfUnZnpfdb7qqEMuG9sYQNovK-FJcUmkDXnq9W0AvEIWL6W9A5QJX46nP5xw9J9Hk-ewjkKqDMPX37fV44GeOeYp2dzk0yHIJX6IrxN14tkRvkpsy4RAy275UWK_-lNn4YR2-Ltg3sXbHBw"/>
+</div>
+</div>
+</main>
+<!-- Bottom Action Area (Mobile Mascot Fallback) -->
+<div class="lg:hidden w-full flex justify-center mb-8 relative z-10">
+<img alt="Friendly fox mascot" class="w-48 h-48 object-contain float-animation" data-alt="A 3D rendered friendly fox mascot character, wearing a blue graduation cap, holding a bright turquoise calculator. The fox is smiling encouragingly and pointing. Floating around the fox are colorful 3D math symbols and soft geometric shapes. The style is highly polished, playful, and skeuomorphic, perfect for a high-quality children's educational app. Lighting is soft, bright, and cheerful." src="https://lh3.googleusercontent.com/aida/ADBb0uiH3llG0VvpXPWUz5NllHCovB6fLoIYILx0c2MlIhCz9wgpn02zu-TQlwspDC-NeoZu4q1dmtcbC5W59k35kBJiSuesgVkkmQRmFuTilpCDfUnZnpfdb7qqEMuG9sYQNovK-FJcUmkDXnq9W0AvEIWL6W9A5QJX46nP5xw9J9Hk-ewjkKqDMPX37fV44GeOeYp2dzk0yHIJX6IrxN14tkRvkpsy4RAy275UWK_-lNn4YR2-Ltg3sXbHBw"/>
+</div>
+<!-- Decorative Background Elements -->
+<div class="fixed top-20 left-10 w-24 h-24 bg-tertiary-fixed rounded-full opacity-20 blur-3xl z-0 pointer-events-none"></div>
+<div class="fixed bottom-20 right-10 w-32 h-32 bg-bubblegum rounded-full opacity-20 blur-3xl z-0 pointer-events-none"></div>
+<div class="fixed top-1/2 left-1/4 w-16 h-16 bg-sky-blue rounded-full opacity-20 blur-2xl z-0 pointer-events-none"></div>
+</body></html>

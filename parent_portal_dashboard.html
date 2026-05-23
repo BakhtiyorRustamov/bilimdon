@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Parent Portal</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+
+<!-- Tailwind Config -->
+
+
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation (Parent/Professional Context - Suppressed for focused dashboard, using a clean custom header) -->
+<header class="bg-surface-container-lowest sticky top-0 z-50 border-b border-surface-variant shadow-sm">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop h-20 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg text-headline-lg font-black text-primary tracking-tight">MathQuest</span>
+<span class="bg-surface-container px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface-variant hidden md:block">Parent Portal</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-primary border-b-4 border-primary pb-1 font-label-bold text-label-bold" href="#">Overview</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#">Curriculum Details</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-bold text-label-bold border-2 border-surface-container-lowest shadow-sm">
+                    JP
+                </div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<!-- Welcome Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Welcome back, Parent!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Here is how Leo is doing in MathQuest this week.</p>
+</div>
+<!-- Mascot Supporter -->
+<div class="flex items-center bg-surface-container-lowest p-3 rounded-xl card-shadow border border-surface-variant">
+<img alt="Friendly fox mascot wearing a graduation cap" class="w-16 h-16 rounded-lg object-cover mr-4" src="https://lh3.googleusercontent.com/aida/ADBb0uiH3llG0VvpXPWUz5NllHCovB6fLoIYILx0c2MlIhCz9wgpn02zu-TQlwspDC-NeoZu4q1dmtcbC5W59k35kBJiSuesgVkkmQRmFuTilpCDfUnZnpfdb7qqEMuG9sYQNovK-FJcUmkDXnq9W0AvEIWL6W9A5QJX46nP5xw9J9Hk-ewjkKqDMPX37fV44GeOeYp2dzk0yHIJX6IrxN14tkRvkpsy4RAy275UWK_-lNn4YR2-Ltg3sXbHBw"/>
+<div>
+<p class="font-label-bold text-label-bold text-primary">Leo is on a streak!</p>
+<p class="text-sm text-on-surface-variant">3 days in a row.</p>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Dashboard -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Key Metrics - Top Row -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-surface-variant hover-lift flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined fill-1 text-2xl">schedule</span>
+</div>
+<span class="bg-surface-container text-on-surface-variant text-xs font-label-bold px-2 py-1 rounded-md">This Week</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">Time Spent Learning</h3>
+<p class="font-headline-lg text-headline-lg text-on-surface">2.5 <span class="text-lg font-normal text-on-surface-variant">hours</span></p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-surface-variant hover-lift flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined fill-1 text-2xl">school</span>
+</div>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">Current Level</h3>
+<p class="font-headline-lg text-headline-lg text-on-surface">1st Grade <span class="text-lg font-normal text-secondary">(Advanced)</span></p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-surface-variant hover-lift flex flex-col justify-between relative overflow-hidden">
+<!-- Decorative background blob -->
+<div class="absolute -right-6 -top-6 w-32 h-32 bg-leaf-green opacity-10 rounded-full blur-2xl"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="w-12 h-12 rounded-full bg-[rgba(107,203,119,0.2)] flex items-center justify-center text-leaf-green">
+<span class="material-symbols-outlined fill-1 text-2xl">target</span>
+</div>
+<span class="flex items-center text-leaf-green text-sm font-label-bold">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> +5%
+                    </span>
+</div>
+<div class="relative z-10">
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">Accuracy Rate</h3>
+<p class="font-headline-lg text-headline-lg text-on-surface">85%</p>
+</div>
+</div>
+<!-- Activity Chart - Spans 8 cols -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-surface-variant flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-body-lg text-body-lg text-on-surface">Learning Activity</h2>
+<select class="bg-surface-container border-none text-on-surface-variant rounded-md text-sm py-1 pl-3 pr-8 focus:ring-primary">
+<option>Last 7 Days</option>
+<option>This Month</option>
+</select>
+</div>
+<!-- Simple CSS Bar Chart -->
+<div class="flex-grow flex items-end justify-between h-48 gap-2 pt-4 relative">
+<!-- Y Axis Lines -->
+<div class="absolute inset-0 flex flex-col justify-between z-0 pb-6 opacity-30">
+<div class="border-b border-surface-variant w-full h-0"></div>
+<div class="border-b border-surface-variant w-full h-0"></div>
+<div class="border-b border-surface-variant w-full h-0"></div>
+<div class="border-b border-surface-variant w-full h-0"></div>
+</div>
+<!-- Bars -->
+<div class="w-full flex justify-around items-end h-full z-10 pb-6 relative group">
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-primary-fixed rounded-t-sm" style="height: 20%;"></div>
+<span class="absolute -bottom-1 text-xs text-on-surface-variant">Mon</span>
+</div>
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-primary-fixed rounded-t-sm" style="height: 45%;"></div>
+<span class="absolute -bottom-1 text-xs text-on-surface-variant">Tue</span>
+</div>
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-primary rounded-t-sm shadow-[0_0_10px_rgba(174,47,52,0.3)] relative" style="height: 85%;">
+<!-- Tooltip on highest day -->
+<div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">45 mins</div>
+</div>
+<span class="absolute -bottom-1 text-xs font-bold text-on-surface">Wed</span>
+</div>
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-primary-fixed rounded-t-sm" style="height: 30%;"></div>
+<span class="absolute -bottom-1 text-xs text-on-surface-variant">Thu</span>
+</div>
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-primary-fixed rounded-t-sm" style="height: 60%;"></div>
+<span class="absolute -bottom-1 text-xs text-on-surface-variant">Fri</span>
+</div>
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-surface-variant rounded-t-sm" style="height: 10%;"></div>
+<span class="absolute -bottom-1 text-xs text-on-surface-variant">Sat</span>
+</div>
+<div class="flex flex-col items-center justify-end h-full w-1/12 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer">
+<div class="w-full bg-surface-variant rounded-t-sm" style="height: 5%;"></div>
+<span class="absolute -bottom-1 text-xs text-on-surface-variant">Sun</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Strengths & Areas to Improve - Spans 4 cols -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Strengths Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-surface-variant flex-1">
+<h2 class="font-body-lg text-body-lg text-on-surface mb-4 flex items-center">
+<span class="material-symbols-outlined text-leaf-green mr-2">verified</span>
+                        Strengths
+                    </h2>
+<ul class="space-y-4">
+<li class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="font-label-bold text-on-surface">Identifying Shapes</span>
+<span class="text-leaf-green">Mastered</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-leaf-green h-full rounded-full" style="width: 100%"></div>
+</div>
+</li>
+<li class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="font-label-bold text-on-surface">Basic Addition</span>
+<span class="text-primary">92%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full progress-fill" style="--progress-width: 92%"></div>
+</div>
+</li>
+</ul>
+</div>
+<!-- Areas to Improve Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-surface-variant flex-1">
+<h2 class="font-body-lg text-body-lg text-on-surface mb-4 flex items-center">
+<span class="material-symbols-outlined text-tertiary mr-2">lightbulb</span>
+                        Focus Areas
+                    </h2>
+<ul class="space-y-4">
+<li class="bg-surface-container-low p-3 rounded-lg border border-surface-variant flex items-start gap-3">
+<div class="mt-0.5 w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-sm">priority_high</span>
+</div>
+<div>
+<p class="font-label-bold text-on-surface text-sm">Subtraction with borrowing</p>
+<p class="text-xs text-on-surface-variant mt-1">Struggling with 2-digit numbers. We'll focus here next.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-high dark:bg-surface-container-highest full-width rounded-t-xl flex flex-col items-center gap-base py-section-gap px-margin-mobile md:px-margin-desktop w-full flat no shadows mt-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black text-secondary">
+            MathQuest
+        </div>
+<div class="flex gap-4 md:gap-8 flex-wrap justify-center mt-4">
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90 transition-transform" href="#">Parents Guide</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90 transition-transform" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90 transition-transform" href="#">Terms of Play</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant hover:text-leaf-green dark:hover:text-leaf-green transition-colors scale-95 active:scale-90 transition-transform" href="#">Contact Us</a>
+</div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed mt-6 text-center">
+            © 2024 MathQuest Adventure. Built for little explorers.
+        </p>
+</footer>
+</body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest Adventure - Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="bg-surface shadow-[0_4px_0_0_rgba(174,47,52,0.1)] docked full-width top-0 sticky z-50 transition-transform duration-200">
+<div class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2 font-headline-lg text-headline-lg font-black text-primary tracking-tight">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">toys</span>
+                MathQuest
+            </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-primary border-b-4 border-primary pb-1 font-label-bold text-label-bold flex flex-col items-center group active:translate-y-[2px] transition-all" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">home</span>
+                    Fun Games
+                </a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-bold text-label-bold flex flex-col items-center group active:translate-y-[2px]" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 0;">military_tech</span>
+                    Earn Badges
+                </a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-bold text-label-bold flex flex-col items-center group active:translate-y-[2px]" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 0;">monitoring</span>
+                    Track Progress
+                </a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-bold text-label-bold flex flex-col items-center group active:translate-y-[2px]" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 0;">info</span>
+                    About
+                </a>
+</nav>
+<div class="flex gap-4">
+<button class="hidden md:block font-label-bold text-label-bold text-primary hover:bg-primary-fixed rounded-full px-6 py-2 transition-colors">Login</button>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold rounded-full px-6 py-2 btn-3d border-on-primary-fixed-variant hover:bg-on-primary-fixed-variant shadow-sm hover:scale-105 transition-transform duration-200">Sign Up</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Welcome & Progress Banner -->
+<section class="col-span-1 md:col-span-12 glass-card rounded-3xl p-8 shadow-sm shadow-primary/10 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 hover:shadow-md hover:shadow-primary/20 transition-shadow duration-300 transform hover:scale-[1.01]">
+<div class="flex-grow z-10">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Welcome back, Explorer!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">You're doing great. Let's learn some more math!</p>
+<div class="w-full max-w-md bg-surface-container-high rounded-full h-8 border-2 border-surface-dim relative shadow-inner">
+<div class="bg-leaf-green h-full rounded-full progress-liquid flex items-center justify-end px-3 transition-all duration-1000 w-[65%]">
+<span class="font-label-bold text-label-bold text-white shadow-sm">Level 5: Addition Master</span>
+</div>
+</div>
+</div>
+<div class="w-48 h-48 flex-shrink-0 z-10 relative bounce-hover cursor-pointer">
+<img alt="MathQuest Fox Mascot holding a calculator and pointing" class="w-full h-full object-contain drop-shadow-xl" src="https://lh3.googleusercontent.com/aida/ADBb0uiH3llG0VvpXPWUz5NllHCovB6fLoIYILx0c2MlIhCz9wgpn02zu-TQlwspDC-NeoZu4q1dmtcbC5W59k35kBJiSuesgVkkmQRmFuTilpCDfUnZnpfdb7qqEMuG9sYQNovK-FJcUmkDXnq9W0AvEIWL6W9A5QJX46nP5xw9J9Hk-ewjkKqDMPX37fV44GeOeYp2dzk0yHIJX6IrxN14tkRvkpsy4RAy275UWK_-lNn4YR2-Ltg3sXbHBw"/>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-secondary-container rounded-full opacity-50 blur-3xl z-0"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-tertiary-fixed rounded-full opacity-50 blur-3xl z-0"></div>
+</section>
+<!-- Continue Learning Card -->
+<section class="col-span-1 md:col-span-8 glass-card rounded-3xl p-8 shadow-sm shadow-bubblegum/20 flex flex-col justify-between hover:shadow-md transition-shadow duration-300 transform hover:scale-[1.01]">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-bubblegum text-white p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-secondary">Continue Adventure</h2>
+</div>
+<div class="bg-surface rounded-2xl p-6 border-2 border-surface-variant mb-6 flex items-center gap-6">
+<div class="w-24 h-24 bg-sky-blue rounded-xl flex items-center justify-center shadow-inner relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A vibrant, 3D rendered illustration of colorful floating numbers and basic math symbols (plus, minus, equals) in a bright, playful kid-friendly style against a soft pastel blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrFxsl_AJ87nqlx2lcazQRKHvZdfpyvLjcwUmr32OktOTshk8ArrGtnTrdrH6ib05pNjxi6kRhcJpJDI1V4-5eUukt1mmcZ1hj7uFrrGy4S8goMHPrIBtQEazhA5YGvkSnid4l2STg28uLZPsmXCruXy8R7nrUnM2FZC0YWNuuTp9oJwahJnUkai0kijQKWOe_MGa7IzxgacPc_UxtnM5KT2W8_Nnkkk92FRAIeAMKtAfVBGTuCB2sEifsqBS7-9KZ89EhQ3eukw"/>
+<span class="font-headline-xl text-white font-black drop-shadow-md z-10">2+2</span>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-1">Jungle Addition</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Help the monkeys count their bananas!</p>
+</div>
+</div>
+<button class="bg-bubblegum text-white font-headline-lg-mobile text-headline-lg-mobile py-4 rounded-2xl btn-3d border-[#e05c7c] hover:bg-[#e05c7c] shadow-sm w-full md:w-auto self-start px-8">
+                Play Now
+                <span class="material-symbols-outlined align-middle ml-2">play_circle</span>
+</button>
+</section>
+<!-- Recent Badges Grid -->
+<section class="col-span-1 md:col-span-4 glass-card rounded-3xl p-8 shadow-sm shadow-tertiary-fixed/20 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-tertiary">My Shiny Badges</h2>
+<a class="text-tertiary hover:text-tertiary-fixed-dim font-label-bold text-label-bold" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-4 flex-grow">
+<!-- Badge 1 -->
+<div class="bg-surface rounded-2xl p-4 border-2 border-surface-variant flex flex-col items-center justify-center text-center gap-2 group hover:border-tertiary-fixed transition-colors cursor-pointer">
+<div class="w-16 h-16 bg-gradient-to-br from-tertiary-fixed to-yellow-500 rounded-full flex items-center justify-center shadow-md badge-float border-4 border-white">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-sm">Star Counter</span>
+</div>
+<!-- Badge 2 -->
+<div class="bg-surface rounded-2xl p-4 border-2 border-surface-variant flex flex-col items-center justify-center text-center gap-2 group hover:border-sky-blue transition-colors cursor-pointer">
+<div class="w-16 h-16 bg-gradient-to-br from-sky-blue to-blue-500 rounded-full flex items-center justify-center shadow-md badge-float border-4 border-white" style="animation-delay: 0.5s;">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-sm">Speedy Solver</span>
+</div>
+<!-- Badge 3 -->
+<div class="bg-surface rounded-2xl p-4 border-2 border-surface-variant flex flex-col items-center justify-center text-center gap-2 group hover:border-leaf-green transition-colors cursor-pointer">
+<div class="w-16 h-16 bg-gradient-to-br from-leaf-green to-green-600 rounded-full flex items-center justify-center shadow-md badge-float border-4 border-white" style="animation-delay: 1s;">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface text-sm">Perfect Score</span>
+</div>
+<!-- Locked Badge -->
+<div class="bg-surface-dim rounded-2xl p-4 border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-center gap-2 opacity-70">
+<div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center shadow-inner border-4 border-surface">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">lock</span>
+</div>
+<span class="font-label-bold text-label-bold text-on-surface-variant text-sm">Next Badge</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high rounded-t-xl mt-auto">
+<div class="flex flex-col items-center gap-base py-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">toys</span>
+                MathQuest
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 mb-6">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-leaf-green transition-colors" href="#">Parents Guide</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-leaf-green transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-leaf-green transition-colors" href="#">Terms of Play</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-leaf-green transition-colors" href="#">Contact Us</a>
+</nav>
+<p class="font-body-md text-body-md text-secondary">© 2024 MathQuest Adventure. Built for little explorers.</p>
+</div>
+</footer>
+</body></html>
