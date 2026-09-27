@@ -6,53 +6,46 @@ export default async function handler(req, res) {
   const token = process.env.HF_TOKEN;
   if (!token) {
     return res.status(200).json({ 
-      answer: "Xato: Vercel serverida HF_TOKEN topilmadi. Environment Variables-ni tekshiring." 
+      answer: "Xato: Vercel serverida HF_TOKEN topilmadi." 
     });
   }
 
   const userPrompt = req.body?.prompt || "Salom!";
 
   try {
-    // Calling your custom fine-tuned model endpoint directly
-    const response = await fetch(
-      "https://api-inference.huggingface.co/models/bakhtiyor1chi/gemma-4-textbook-tutor",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          inputs: userPrompt,
-          parameters: {
-            max_new_tokens: 200,
-            temperature: 0.7
+    const apiResponse = await fetch("https://router.huggingface.co/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "meta-llama/Llama-3.2-1B-Instruct",
+        messages: [
+          {
+            role: "system",
+            content: "Siz boshlang'ich sinf o'quvchilariga yordam beradigan 'Bilimdon' ustozisiz. O'zbek tilida qisqa va tushunarli javob bering."
+          },
+          {
+            role: "user",
+            content: userPrompt
           }
-        }),
-      }
-    );
+        ],
+        max_tokens: 150
+      })
+    });
 
-    const result = await response.json();
+    const data = await apiResponse.json();
 
-    if (!response.ok) {
-      const errorMsg = result.error || JSON.stringify(result);
-      return res.status(200).json({ 
-        answer: `HF Xatosi (${response.status}): ${errorMsg}. (Eslatma: Agar model uxlayotgan bo'lsa, 30 soniyadan keyin yana urinib ko'ring)` 
-      });
+    if (!apiResponse.ok) {
+      const errorText = data.error?.message || JSON.stringify(data);
+      return res.status(200).json({ answer: `API Xatosi: ${errorText}` });
     }
 
-    let answer = "";
-    if (Array.isArray(result) && result[0]?.generated_text) {
-      answer = result[0].generated_text.trim();
-    } else if (typeof result === 'object' && result.generated_text) {
-      answer = result.generated_text.trim();
-    } else {
-      answer = JSON.stringify(result);
-    }
+    const answer = data.choices?.[0]?.message?.content || "Javob olinmadi.";
+    return res.status(200).json({ answer });
 
-    return res.status(200).json({ answer: answer || "Javob olinmadi." });
-
-  } catch (error) {
-    return res.status(200).json({ answer: `Server ichki xatosi: ${error.message}` });
+  } catch (err) {
+    return res.status(200).json({ answer: `U ulanish xatosi: ${err.message}` });
   }
 }
