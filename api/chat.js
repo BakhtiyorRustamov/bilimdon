@@ -1,8 +1,10 @@
 export default async function handler(req, res) {
+  // 1. Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
+  // 2. Ensure environment variable is loaded
   const token = process.env.HF_TOKEN;
   if (!token) {
     return res.status(200).json({ 
@@ -13,9 +15,9 @@ export default async function handler(req, res) {
   const userPrompt = req.body?.prompt || "Salom!";
 
   try {
-    // We use Qwen2.5-7B-Instruct, which is hosted on Hugging Face's Serverless Router
+    // 3. Call Hugging Face API with Llama-3.2-1B-Instruct
     const response = await fetch(
-      "https://router.huggingface.co/v1/chat/completions",
+      "https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-1B-Instruct",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -23,33 +25,35 @@ export default async function handler(req, res) {
         },
         method: "POST",
         body: JSON.stringify({
-          model: "Qwen/Qwen2.5-7B-Instruct",
-          messages: [
-            {
-              role: "system",
-              content: "Siz boshlang'ich sinf o'quvchilariga yordam beradigan mehribon va aqlli 'Bilimdon' ustozisiz. Barcha javoblarni o'zbek tilida, tushunarli va qisqa bering."
-            },
-            {
-              role: "user",
-              content: userPrompt
-            }
-          ],
-          max_tokens: 250,
-          temperature: 0.7
+          inputs: `<|system|>\nSiz boshlang'ich sinf o'quvchilariga yordam beradigan 'Bilimdon' ustozisiz. Barcha javoblarni o'zbek tilida, tushunarli va qisqa bering.<|end|>\n<|user|>\n${userPrompt}<|end|>\n<|assistant|>`,
+          parameters: {
+            max_new_tokens: 200,
+            temperature: 0.7,
+            return_full_text: false
+          }
         }),
       }
     );
 
     const result = await response.json();
 
+    // 4. Handle API error responses (e.g. 401, 503, model loading)
     if (!response.ok) {
-      const errorMsg = result.error?.message || JSON.stringify(result);
+      const errorMsg = result.error || JSON.stringify(result);
       return res.status(200).json({ answer: `HF API Xatosi (${response.status}): ${errorMsg}` });
     }
 
-    // OpenAI-compatible format output parsing
-    const answer = result.choices?.[0]?.message?.content || "Javob olinmadi.";
-    return res.status(200).json({ answer });
+    // 5. Parse output safely
+    let answer = "";
+    if (Array.isArray(result) && result[0]?.generated_text) {
+      answer = result[0].generated_text.trim();
+    } else if (typeof result === 'object' && result.generated_text) {
+      answer = result.generated_text.trim();
+    } else {
+      answer = JSON.stringify(result);
+    }
+
+    return res.status(200).json({ answer: answer || "Javob olinmadi." });
 
   } catch (error) {
     return res.status(200).json({ answer: `Server ichki xatosi: ${error.message}` });
