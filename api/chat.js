@@ -3,28 +3,55 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const userPrompt = req.body.prompt;
+  const token = process.env.HF_TOKEN;
+  if (!token) {
+    return res.status(200).json({ 
+      answer: "Xato: Vercel serverida HF_TOKEN topilmadi. Environment Variables-ni tekshiring." 
+    });
+  }
+
+  const userPrompt = req.body?.prompt || "Salom!";
 
   try {
-    const hfResponse = await fetch(
-      "https://api-inference.huggingface.co/models/bakhtiyor1chi/gemma-4-textbook-tutor",
+    // We use Qwen2.5-7B-Instruct, which is hosted on Hugging Face's Serverless Router
+    const response = await fetch(
+      "https://router.huggingface.co/v1/chat/completions",
       {
         headers: {
-          Authorization: `Bearer ${process.env.HF_TOKEN}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         method: "POST",
-        body: JSON.stringify({ inputs: userPrompt }),
+        body: JSON.stringify({
+          model: "Qwen/Qwen2.5-7B-Instruct",
+          messages: [
+            {
+              role: "system",
+              content: "Siz boshlang'ich sinf o'quvchilariga yordam beradigan mehribon va aqlli 'Bilimdon' ustozisiz. Barcha javoblarni o'zbek tilida, tushunarli va qisqa bering."
+            },
+            {
+              role: "user",
+              content: userPrompt
+            }
+          ],
+          max_tokens: 250,
+          temperature: 0.7
+        }),
       }
     );
 
-    const result = await hfResponse.json();
-    
-    // Hugging Face returns an array. We extract the generated text.
-    const answer = result[0]?.generated_text || "Kechirasiz, javob topilmadi."; 
+    const result = await response.json();
 
-    res.status(200).json({ answer: answer });
+    if (!response.ok) {
+      const errorMsg = result.error?.message || JSON.stringify(result);
+      return res.status(200).json({ answer: `HF API Xatosi (${response.status}): ${errorMsg}` });
+    }
+
+    // OpenAI-compatible format output parsing
+    const answer = result.choices?.[0]?.message?.content || "Javob olinmadi.";
+    return res.status(200).json({ answer });
+
   } catch (error) {
-    res.status(500).json({ answer: "Server xatosi yuz berdi." });
+    return res.status(200).json({ answer: `Server ichki xatosi: ${error.message}` });
   }
 }
