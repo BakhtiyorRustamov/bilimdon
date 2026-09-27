@@ -1,10 +1,8 @@
 export default async function handler(req, res) {
-  // 1. Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // 2. Ensure environment variable is loaded
   const token = process.env.HF_TOKEN;
   if (!token) {
     return res.status(200).json({ 
@@ -15,9 +13,9 @@ export default async function handler(req, res) {
   const userPrompt = req.body?.prompt || "Salom!";
 
   try {
-    // 3. Call Hugging Face API with Llama-3.2-1B-Instruct
+    // Calling your custom fine-tuned model endpoint directly
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-1B-Instruct",
+      "https://api-inference.huggingface.co/models/bakhtiyor1chi/gemma-4-textbook-tutor",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -25,11 +23,10 @@ export default async function handler(req, res) {
         },
         method: "POST",
         body: JSON.stringify({
-          inputs: `<|system|>\nSiz boshlang'ich sinf o'quvchilariga yordam beradigan 'Bilimdon' ustozisiz. Barcha javoblarni o'zbek tilida, tushunarli va qisqa bering.<|end|>\n<|user|>\n${userPrompt}<|end|>\n<|assistant|>`,
+          inputs: userPrompt,
           parameters: {
             max_new_tokens: 200,
-            temperature: 0.7,
-            return_full_text: false
+            temperature: 0.7
           }
         }),
       }
@@ -37,13 +34,13 @@ export default async function handler(req, res) {
 
     const result = await response.json();
 
-    // 4. Handle API error responses (e.g. 401, 503, model loading)
     if (!response.ok) {
       const errorMsg = result.error || JSON.stringify(result);
-      return res.status(200).json({ answer: `HF API Xatosi (${response.status}): ${errorMsg}` });
+      return res.status(200).json({ 
+        answer: `HF Xatosi (${response.status}): ${errorMsg}. (Eslatma: Agar model uxlayotgan bo'lsa, 30 soniyadan keyin yana urinib ko'ring)` 
+      });
     }
 
-    // 5. Parse output safely
     let answer = "";
     if (Array.isArray(result) && result[0]?.generated_text) {
       answer = result[0].generated_text.trim();
