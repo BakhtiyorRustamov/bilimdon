@@ -78,3 +78,28 @@
 <div class="fixed bottom-20 right-10 w-32 h-32 bg-bubblegum rounded-full opacity-20 blur-3xl z-0 pointer-events-none"></div>
 <div class="fixed top-1/2 left-1/4 w-16 h-16 bg-sky-blue rounded-full opacity-20 blur-2xl z-0 pointer-events-none"></div>
 </body></html>
+<div style="margin: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px;">
+  <input type="text" id="ai-input" placeholder="Ustozdan savol so'rang..." style="width: 70%; padding: 8px;">
+  <button onclick="askAI()" style="padding: 8px 15px;">Yuborish</button>
+  <p id="ai-response" style="margin-top: 15px; color: #333;"></p>
+</div>
+
+<script>
+async function askAI() {
+  const prompt = document.getElementById('ai-input').value;
+  document.getElementById('ai-response').innerText = "O'ylanmoqda (Thinking)...";
+  
+  try {
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: prompt })
+    });
+    
+    const data = await response.json();
+    document.getElementById('ai-response').innerText = data.answer;
+  } catch (error) {
+    document.getElementById('ai-response').innerText = "Xato yuz berdi. Iltimos, qayta urinib ko'ring.";
+  }
+}
+</script>
